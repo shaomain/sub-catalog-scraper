@@ -1,0 +1,41 @@
+name: Update Subscription Catalog
+
+on:
+  schedule:
+    # 毎週月曜日の午前0時 (UTC) に実行
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
+    # 手動での実行も許可
+
+permissions:
+  contents: write
+
+jobs:
+  update-catalog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run Scraper
+        run: node index.js
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add catalog.json
+          git commit -m "chore: auto-update subscription catalog [skip ci]" || echo "No changes to commit"
+          git push

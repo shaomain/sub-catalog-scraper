@@ -1,0 +1,73 @@
+{
+  "services": [
+    {
+      "id": "spotify",
+      "name": "Spotify",
+      "plans": [
+        {
+          "id": "spotify_standard",
+          "name": "Standard",
+          "amount": 980
+        },
+        {
+          "id": "spotify_duo",
+          "name": "Duo",
+          "amount": 1280
+        },
+        {
+          "id": "spotify_family",
+          "name": "Family",
+          "amount": 1580
+        },
+        {
+          "id": "spotify_student",
+          "name": "Student",
+          "amount": 480
+        }
+      ]
+    },
+    {
+      "id": "youtube",
+      "name": "YouTube Premium",
+      "plans": [
+        {
+          "id": "youtube_premium",
+          "name": "Premium (個人)",
+          "amount": 1280
+        },
+        {
+          "id": "youtube_family",
+          "name": "Premium (ファミリー)",
+          "amount": 2280
+        },
+        {
+          "id": "youtube_student",
+          "name": "Premium (学割)",
+          "amount": 780
+        }
+      ]
+    },
+    {
+      "id": "netflix",
+      "name": "Netflix",
+      "plans": [
+        {
+          "id": "netflix_standard_ads",
+          "name": "広告つきスタンダード",
+          "amount": 790
+        },
+        {
+          "id": "netflix_standard",
+          "name": "スタンダード",
+          "amount": 1490
+        },
+        {
+          "id": "netflix_premium",
+          "name": "プレミアム",
+          "amount": 1980
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-06-19T17:33:10.978Z"
+}

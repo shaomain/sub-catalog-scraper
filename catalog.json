@@ -67,7 +67,99 @@
           "amount": 1980
         }
       ]
+    },
+    {
+      "id": "applemusic",
+      "name": "Apple Music",
+      "plans": [
+        {
+          "id": "applemusic_individual",
+          "name": "個人",
+          "amount": 1080
+        },
+        {
+          "id": "applemusic_family",
+          "name": "ファミリー",
+          "amount": 1680
+        },
+        {
+          "id": "applemusic_student",
+          "name": "学生",
+          "amount": 580
+        }
+      ]
+    },
+    {
+      "id": "hulu",
+      "name": "Hulu",
+      "plans": [
+        {
+          "id": "hulu_standard",
+          "name": "Hulu",
+          "amount": 1026
+        }
+      ]
+    },
+    {
+      "id": "unext",
+      "name": "U-NEXT",
+      "plans": [
+        {
+          "id": "unext_monthly",
+          "name": "月額プラン",
+          "amount": 2189
+        }
+      ]
+    },
+    {
+      "id": "google_ai",
+      "name": "Google AI Studio",
+      "plans": [
+        {
+          "id": "google_ai_premium",
+          "name": "Gemini Advanced",
+          "amount": 3200
+        }
+      ]
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "plans": [
+        {
+          "id": "claude_pro",
+          "name": "Claude Pro",
+          "amount": 3000
+        }
+      ]
+    },
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "plans": [
+        {
+          "id": "chatgpt_plus",
+          "name": "ChatGPT Plus",
+          "amount": 3000
+        }
+      ]
+    },
+    {
+      "id": "amazon_prime",
+      "name": "Amazon Prime",
+      "plans": [
+        {
+          "id": "amazon_prime_monthly",
+          "name": "月間プラン",
+          "amount": 600
+        },
+        {
+          "id": "amazon_prime_annual",
+          "name": "年間プラン",
+          "amount": 5900
+        }
+      ]
     }
   ],
-  "updatedAt": "2026-06-19T17:33:10.978Z"
+  "updatedAt": "2026-06-19T18:04:29.540Z"
 }

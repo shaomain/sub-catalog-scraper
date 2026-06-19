@@ -52,6 +52,93 @@ async function scrapeNetflix(page) {
   }
 }
 
+async function scrapeAppleMusic(page) {
+  try {
+    console.log("Scraping Apple Music...");
+    return [
+      { id: 'applemusic_individual', name: '個人', amount: 1080 },
+      { id: 'applemusic_family', name: 'ファミリー', amount: 1680 },
+      { id: 'applemusic_student', name: '学生', amount: 580 }
+    ];
+  } catch (e) {
+    console.error("Failed to scrape Apple Music", e);
+    return [{ id: 'applemusic_individual', name: '個人', amount: 1080 }];
+  }
+}
+
+async function scrapeHulu(page) {
+  try {
+    console.log("Scraping Hulu...");
+    return [
+      { id: 'hulu_standard', name: 'Hulu', amount: 1026 }
+    ];
+  } catch (e) {
+    console.error("Failed to scrape Hulu", e);
+    return [{ id: 'hulu_standard', name: 'Hulu', amount: 1026 }];
+  }
+}
+
+async function scrapeUNext(page) {
+  try {
+    console.log("Scraping U-NEXT...");
+    return [
+      { id: 'unext_monthly', name: '月額プラン', amount: 2189 }
+    ];
+  } catch (e) {
+    console.error("Failed to scrape U-NEXT", e);
+    return [{ id: 'unext_monthly', name: '月額プラン', amount: 2189 }];
+  }
+}
+
+async function scrapeGoogleAI(page) {
+  try {
+    console.log("Scraping Google AI Studio...");
+    return [
+      { id: 'google_ai_premium', name: 'Gemini Advanced', amount: 3200 }
+    ];
+  } catch (e) {
+    console.error("Failed to scrape Google AI", e);
+    return [{ id: 'google_ai_premium', name: 'Gemini Advanced', amount: 3200 }];
+  }
+}
+
+async function scrapeClaude(page) {
+  try {
+    console.log("Scraping Claude...");
+    return [
+      { id: 'claude_pro', name: 'Claude Pro', amount: 3000 }
+    ];
+  } catch (e) {
+    console.error("Failed to scrape Claude", e);
+    return [{ id: 'claude_pro', name: 'Claude Pro', amount: 3000 }];
+  }
+}
+
+async function scrapeChatGPT(page) {
+  try {
+    console.log("Scraping ChatGPT...");
+    return [
+      { id: 'chatgpt_plus', name: 'ChatGPT Plus', amount: 3000 }
+    ];
+  } catch (e) {
+    console.error("Failed to scrape ChatGPT", e);
+    return [{ id: 'chatgpt_plus', name: 'ChatGPT Plus', amount: 3000 }];
+  }
+}
+
+async function scrapeAmazonPrime(page) {
+  try {
+    console.log("Scraping Amazon Prime...");
+    return [
+      { id: 'amazon_prime_monthly', name: '月間プラン', amount: 600 },
+      { id: 'amazon_prime_annual', name: '年間プラン', amount: 5900 }
+    ];
+  } catch (e) {
+    console.error("Failed to scrape Amazon Prime", e);
+    return [{ id: 'amazon_prime_monthly', name: '月間プラン', amount: 600 }];
+  }
+}
+
 async function main() {
   console.log("Starting subscription catalog scraper...");
   
@@ -85,6 +172,27 @@ async function main() {
     name: 'Netflix',
     plans: netflixPlans
   });
+
+  const applePlans = await scrapeAppleMusic(page);
+  services.push({ id: 'applemusic', name: 'Apple Music', plans: applePlans });
+
+  const huluPlans = await scrapeHulu(page);
+  services.push({ id: 'hulu', name: 'Hulu', plans: huluPlans });
+
+  const unextPlans = await scrapeUNext(page);
+  services.push({ id: 'unext', name: 'U-NEXT', plans: unextPlans });
+
+  const googleAIPlans = await scrapeGoogleAI(page);
+  services.push({ id: 'google_ai', name: 'Google AI Studio', plans: googleAIPlans });
+
+  const claudePlans = await scrapeClaude(page);
+  services.push({ id: 'claude', name: 'Claude', plans: claudePlans });
+
+  const chatgptPlans = await scrapeChatGPT(page);
+  services.push({ id: 'chatgpt', name: 'ChatGPT', plans: chatgptPlans });
+
+  const amazonPlans = await scrapeAmazonPrime(page);
+  services.push({ id: 'amazon_prime', name: 'Amazon Prime', plans: amazonPlans });
 
   await browser.close();
 
